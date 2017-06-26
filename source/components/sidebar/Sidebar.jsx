@@ -5,7 +5,6 @@ import React from 'react';
 import './Sidebar.scss';
 
 class Sidebar extends React.Component {
-
     render() {
         return(
             <section className="sidebar">

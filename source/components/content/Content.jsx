@@ -4,6 +4,8 @@ import React from 'react';
 // Styles
 import './Content.scss';
 
+import Counter from '../counter/Counter.jsx';
+
 class Content extends React.Component {
     constructor(props) {
         super(props);
@@ -24,6 +26,7 @@ class Content extends React.Component {
                     onChange={this.handleInputChange}
                 />
                 <span>Hello {this.state.input}</span>
+                <Counter />
             </div>
         );
     }
