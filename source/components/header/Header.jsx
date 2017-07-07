@@ -2,12 +2,14 @@
 import React from 'react'
 
 // Styles
-import './App.scss'
+import './Header.scss'
 
-export default class App extends React.Component {
+export default class Header extends React.Component {
     render() {
         return(
-            <h1>Hello</h1>
+            <header className="header">
+                <h1>Header</h1>
+            </header>
         )
     }
 }

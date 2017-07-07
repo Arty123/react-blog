@@ -1,0 +1,23 @@
+.posts-wrapper {
+  width: 80%;
+  margin: 1em;
+}
+
+.posts {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.posts__item {
+  background-color: #c6d3fa;
+  color: #7387c3;
+  width: 11%;
+  padding: 5%;
+  margin-bottom: 1em;
+  text-align: center;
+}
+

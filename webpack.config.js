@@ -63,14 +63,6 @@ module.exports = {
                 }),
             },
             {
-                test: /\.js$/,
-                enforce: "pre",
-                loader: "eslint-loader",
-                options: {
-                    fix: true
-                }
-            },
-            {
                 test: /\.(jpg|svg)$/,
                 loader: 'file-loader',
                 options: {
@@ -100,21 +92,13 @@ module.exports = {
             },
             {
                 test: /.jsx?$/,
+                loader: 'babel-loader',
                 exclude: /node_modules/,
-                include: path.join(PATHS.source),
-                use: [
-                    {
-                        loader: 'babel-loader',
-                        options: {
-                            babelrc: false,
-                            presets: [
-                                ['es2015', { modules: false }],
-                                'react',
-                            ],
-                        }
-                    }
-                ]
-            },
+                query: {
+                    presets: ['es2015', 'react'],
+                    plugins: ["transform-object-rest-spread"]
+                }
+            }
         ]
     }
 };
