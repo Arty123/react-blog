@@ -1,28 +1,13 @@
 // Dependencies
-import React from 'react';
-
-// Components
-import Header   from '../header/Header.jsx';
-import Content  from '../content/Content.jsx';
-import Sidebar  from '../sidebar/Sidebar.jsx';
-import Footer   from '../footer/Footer.jsx';
+import React from 'react'
 
 // Styles
-import './App.scss';
+import './App.scss'
 
-class App extends  React.Component {
+export default class App extends React.Component {
     render() {
-        return (
-            <div className="site-wrapper">
-                <Header />
-                <div className="main-content">
-                    <Sidebar content={"Content of Sidebar..."} />
-                    <Content />
-                </div>
-                <Footer />
-            </div>
-        );
+        return() {
+            <h1>Hello</h1>
+        }
     }
 }
-
-export default App;

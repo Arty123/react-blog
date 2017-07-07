@@ -1,17 +1,13 @@
 // Dependencies
-import React from 'react';
+import React from 'react'
 
 // Styles
-import './Footer.scss';
+import './App.scss'
 
-class Footer extends React.Component {
+export default class App extends React.Component {
     render() {
-        return (
-            <footer>
-                <h1>Just a footer...</h1>
-            </footer>
-        );
+        return(
+            <h1>Hello</h1>
+        )
     }
 }
-
-export default Footer;  

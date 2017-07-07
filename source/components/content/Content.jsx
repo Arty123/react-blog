@@ -1,35 +1,13 @@
 // Dependencies
-import React from 'react';
+import React from 'react'
 
 // Styles
-import './Content.scss';
+import './App.scss'
 
-import Counter from '../counter/Counter.jsx';
-
-class Content extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleInputChange = this.handleInputChange.bind(this);
-        this.state = {
-            input: 'Man',
-        };
-    }
-    handleInputChange(e) {
-        this.setState({ input: e.target.value });
-    }
+export default class App extends React.Component {
     render() {
-        return (
-            <div className="content">
-                <input
-                    type="text"
-                    value={this.state.input}
-                    onChange={this.handleInputChange}
-                />
-                <span>Hello {this.state.input}</span>
-                <Counter />
-            </div>
-        );
+        return(
+            <h1>Hello</h1>
+        )
     }
 }
-
-export default Content;
