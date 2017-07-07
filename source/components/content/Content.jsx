@@ -1,24 +1,36 @@
 // Dependencies
 import React from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 import Posts from '../posts/Posts.jsx'
+
+// Actions
+import addPostAction from '../../actions/addPostAction'
 
 // Styles
 import './Content.scss'
 
-export default class Content extends React.Component {
+function mapStateToProps(state) {
+    return {
+        posts: state.posts
+    }
+}
+
+function mapDisptachToProps(dispatch) {
+    return {
+        addPost: bindActionCreators(addPostAction, dispatch)
+    }
+}
+
+class Content extends React.Component {
     constructor() {
         super();
         this.addPostAction = this.addPostAction.bind(this);
         this.removePostAction = this.removePostAction.bind(this);
-        this.state = {
-            posts: ['Post 1', 'Post 2', 'Post 3', 'Post 4'],
-        };
     }
 
     addPostAction() {
-        return this.setState(() => {
-            return { posts: [...this.state.posts, this.refs.postInput.value] }
-        })
+        this.props.addPost(this.refs.postInput.value);
     }
 
     removePostAction(e, data) {
@@ -33,9 +45,11 @@ export default class Content extends React.Component {
                     <input ref="postInput" type="text" placeholder="Add new post"/>
                     <button onClick={this.addPostAction} className="button">Add</button>
                 </div>
-                <Posts removeHandler={this.removePostAction} postsCount={this.state.posts.length} posts={this.state.posts} />
+                <Posts postsCount={this.props.posts.length} posts={this.props.posts} />
                 <button className="button">Load more</button>
             </section>
         )
     }
 }
+
+export default connect(mapStateToProps, mapDisptachToProps)(Content)

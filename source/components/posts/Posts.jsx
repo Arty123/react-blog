@@ -18,7 +18,7 @@ export default class Posts extends React.Component {
                 <h3 className="posts-title">Recent posts: {this.props.postsCount}</h3>
                 <ul className="posts">
                     {this.props.posts.map((item, id) => {
-                        return <Post ref="postItem" removeHandler={this.props.removeHandler} key={id} content={item} />
+                        return <Post ref="postItem" key={id} content={item} />
                       })
                     }
                 </ul>

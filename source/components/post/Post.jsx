@@ -10,7 +10,7 @@ export default class Post extends React.Component {
             <li className="posts__item">
                 <div className="post__content">{this.props.content}</div>
                 <div className="post__buttons-wrapper">
-                    <button onClick={this.props.removeHandler} className="button btn-post btn-remove">remove</button>
+                    <button className="button btn-post btn-remove">remove</button>
                     <button className="button btn-post btn-edit">edit</button>
                 </div>
             </li>
