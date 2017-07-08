@@ -9,13 +9,8 @@ import ReactDOM from 'react-dom';
 // Eeducer
 import reducer from './reducers/index.js'
 
-// Initial state
-const initState = {
-    posts: ['Post 1', 'Post 2', 'Post 3', 'Post 4'],
-}
-
 // Store
-const store = createStore(reducer, initState);
+const store = createStore(reducer);
 
 // Components
 import App from './components/app/App.jsx';

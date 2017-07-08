@@ -5,14 +5,14 @@ import { connect } from 'react-redux'
 import Posts from '../posts/Posts.jsx'
 
 // Actions
-import addPostAction from '../../actions/addPostAction'
+import addPostAction from '../../actions/posts/addPostAction'
 
 // Styles
 import './Content.scss'
 
 function mapStateToProps(state) {
     return {
-        posts: state.posts
+        posts: state.postsReducer.posts
     }
 }
 
